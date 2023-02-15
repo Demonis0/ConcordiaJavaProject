@@ -65,11 +65,11 @@ public class Patient extends Person{
         this.pastAppointments = pastAppointments;
     }
 
-    public void setTreatments(List<Treatment> threatments) {
-        this.treatments = threatments;
+    public void setThreatments(List<Treatment> treatments) {
+        this.treatments = treatments;
     }
 
-    public void setPastTreatments(List<Treatment> pastThreatments) {
-        this.pastTreatments = pastThreatments;
+    public void setPastThreatments(List<Treatment> pastTreatments) {
+        this.pastTreatments = pastTreatments;
     }
 }
