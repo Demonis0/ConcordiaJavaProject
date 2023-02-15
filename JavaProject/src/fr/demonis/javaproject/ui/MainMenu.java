@@ -30,15 +30,15 @@ public class MainMenu extends Frame{
         //button events : when mouse click button, it will open the corresponding menu
         b1.addActionListener(e -> {
             new DoctorMenu();
-            dispose();
+            frame.dispose();
         });
         b2.addActionListener(e -> {
             new SecretaryMenu();
-            dispose();
+            frame.dispose();
         });
         b3.addActionListener(e -> {
             new PatientMenu();
-            dispose();
+            frame.dispose();
         });
 
         //button events, when keyboard press button, it will open the corresponding menu
@@ -47,7 +47,7 @@ public class MainMenu extends Frame{
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
                     new DoctorMenu();
-                    dispose();
+                    frame.dispose();
                 }
             }
         });
@@ -56,7 +56,7 @@ public class MainMenu extends Frame{
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
                     new SecretaryMenu();
-                    dispose();
+                    frame.dispose();
                 }
             }
         });
@@ -65,7 +65,7 @@ public class MainMenu extends Frame{
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
                     new PatientMenu();
-                    dispose();
+                    frame.dispose();
                 }
             }
         });
@@ -78,7 +78,7 @@ public class MainMenu extends Frame{
         frame.setVisible(true);
 
         //close the window
-        frame.addWindowListener(new java.awt.event.WindowAdapter() {
+        addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                 System.exit(0);
