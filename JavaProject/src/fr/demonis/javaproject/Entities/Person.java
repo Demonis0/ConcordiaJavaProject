@@ -1,9 +1,12 @@
-package fr.demonis.javaproject.Entities;
+package fr.demonis.javaproject.entities;
 
-public class Person {
+import fr.demonis.javaproject.Main;
+
+public abstract class Person {
 
     String FirstName, LastName, dateOfBirth, phone, mail;
     int id;
+    static int totalId = 0;
 
     public Person(String firstName, String lastName, String dateOfBirth, String phone, String mail) {
         FirstName = firstName;
@@ -11,12 +14,16 @@ public class Person {
         this.dateOfBirth = dateOfBirth;
         this.phone = phone;
         this.mail = mail;
+        this.id = totalId;
+        totalId++;
     }
 
     public Person(String firstName, String lastName, String dateOfBirth) {
         FirstName = firstName;
         LastName = lastName;
         this.dateOfBirth = dateOfBirth;
+        this.id = totalId;
+        totalId++;
     }
 
     public String getFirstName() {
@@ -58,4 +65,6 @@ public class Person {
     public void setMail(String mail) {
         this.mail = mail;
     }
+
+
 }
