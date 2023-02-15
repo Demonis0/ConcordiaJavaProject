@@ -1,5 +1,7 @@
 package fr.demonis.javaproject.ui;
 
+import fr.demonis.javaproject.utils.Constants;
+
 import java.awt.*;
 
 import javax.swing.JFrame;
@@ -24,7 +26,7 @@ public class MainMenu extends Frame{
         b3.setBounds(w+120-(button_width/2), h-button_height/2, button_width, button_height);
 
         JFrame frame = new JFrame ();
-        frame.setBounds ( w-150, h-150, 300, 300);
+        frame.setBounds ( 0, 0, Constants.xSize, Constants.ySize);
         frame.setVisible ( true );
 
         //button events : when mouse click button, it will open the corresponding menu
