@@ -1,5 +1,7 @@
 package fr.demonis.javaproject;
 
+import fr.demonis.javaproject.ui.DoctorMenu;
+import fr.demonis.javaproject.ui.MainMenu;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -11,7 +13,8 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        JSONObject jo = new JSONObject();
+        new MainMenu();
+        /*JSONObject jo = new JSONObject();
         jo.put("Last Name", "JACQUES");
         jo.put("First Name", "Matthieu");
         jo.put("Date of birth", "14/02/2002");
@@ -32,7 +35,7 @@ public class Main {
         System.out.println(jo2.toString());
         System.out.println(jo2.get("Last Name"));
         System.out.println(jo2.get("First Name"));
-        System.out.println(jo2.get("Date of birth"));
+        System.out.println(jo2.get("Date of birth"));*/
     }
 
 
