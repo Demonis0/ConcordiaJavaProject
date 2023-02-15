@@ -1,7 +1,7 @@
 package fr.demonis.javaproject.entities;
 
 import fr.demonis.javaproject.objects.Appointment;
-import fr.demonis.javaproject.objects.Threatment;
+import fr.demonis.javaproject.objects.Treatment;
 import fr.demonis.javaproject.utils.Specialities;
 
 import java.util.ArrayList;
@@ -12,7 +12,7 @@ public class Patient extends Person{
 
     String insuranceCarrier,exployer;
     List<Appointment> futureAppointments,pastAppointments;
-    List<Threatment> threatments, pastThreatments;
+    List<Treatment> treatments, pastTreatments;
     HashMap<Specialities, Doctor> doctors;
 
     public Patient(String firstName, String lastName, String dateOfBirth, String phone, String mail, String insuranceCarrier, String exployer) {
@@ -22,8 +22,8 @@ public class Patient extends Person{
         this.futureAppointments = new ArrayList<Appointment>();
         this.pastAppointments = new ArrayList<Appointment>();
         this.doctors = new HashMap<Specialities, Doctor>();
-        this.threatments = new ArrayList<Threatment>();
-        this.pastThreatments = new ArrayList<Threatment>();
+        this.treatments = new ArrayList<Treatment>();
+        this.pastTreatments = new ArrayList<Treatment>();
     }
 
     public Patient(String firstName, String lastName, String dateOfBirth, String insuranceCarrier, String exployer) {
@@ -33,8 +33,8 @@ public class Patient extends Person{
         this.futureAppointments = new ArrayList<Appointment>();
         this.pastAppointments = new ArrayList<Appointment>();
         this.doctors = new HashMap<Specialities, Doctor>();
-        this.threatments = new ArrayList<Threatment>();
-        this.pastThreatments = new ArrayList<Threatment>();
+        this.treatments = new ArrayList<Treatment>();
+        this.pastTreatments = new ArrayList<Treatment>();
     }
 
     public String getInsuranceCarrier() {
@@ -65,11 +65,11 @@ public class Patient extends Person{
         this.pastAppointments = pastAppointments;
     }
 
-    public void setThreatments(List<Threatment> threatments) {
-        this.threatments = threatments;
+    public void setTreatments(List<Treatment> threatments) {
+        this.treatments = threatments;
     }
 
-    public void setPastThreatments(List<Threatment> pastThreatments) {
-        this.pastThreatments = pastThreatments;
+    public void setPastTreatments(List<Treatment> pastThreatments) {
+        this.pastTreatments = pastThreatments;
     }
 }

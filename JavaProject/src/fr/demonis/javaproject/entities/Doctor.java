@@ -1,7 +1,7 @@
 package fr.demonis.javaproject.entities;
 
 import fr.demonis.javaproject.objects.Appointment;
-import fr.demonis.javaproject.objects.Threatment;
+import fr.demonis.javaproject.objects.Treatment;
 import fr.demonis.javaproject.utils.Specialities;
 
 import java.util.ArrayList;
@@ -13,7 +13,7 @@ public class Doctor extends Person{
     Specialities speciality;
     List<Patient> patients,pastPatients;
     List<Appointment> futureAppointments,pastAppointments;
-    List<Threatment> threatments, pastThreatments;
+    List<Treatment> treatments, pastTreatments;
 
     public Doctor(String firstName, String lastName, String dateOfBirth, String phone, String mail, String dateOfEmployment, Specialities speciality) {
         super(firstName, lastName, dateOfBirth, phone, mail);
@@ -23,8 +23,8 @@ public class Doctor extends Person{
         this.pastPatients = new ArrayList<Patient>();
         this.futureAppointments = new ArrayList<Appointment>();
         this.pastAppointments = new ArrayList<Appointment>();
-        this.threatments = new ArrayList<Threatment>();
-        this.pastThreatments = new ArrayList<Threatment>();
+        this.treatments = new ArrayList<Treatment>();
+        this.pastTreatments = new ArrayList<Treatment>();
     }
 
     public Doctor(String firstName, String lastName, String dateOfBirth, String dateOfEmployment, Specialities speciality) {
@@ -35,8 +35,8 @@ public class Doctor extends Person{
         this.pastPatients = new ArrayList<Patient>();
         this.futureAppointments = new ArrayList<Appointment>();
         this.pastAppointments = new ArrayList<Appointment>();
-        this.threatments = new ArrayList<Threatment>();
-        this.pastThreatments = new ArrayList<Threatment>();
+        this.treatments = new ArrayList<Treatment>();
+        this.pastTreatments = new ArrayList<Treatment>();
     }
 
     public String getDateOfEmployment() {
@@ -71,11 +71,11 @@ public class Doctor extends Person{
         this.pastAppointments = pastAppointments;
     }
 
-    public void setThreatments(List<Threatment> threatments) {
-        this.threatments = threatments;
+    public void setThreatments(List<Treatment> threatments) {
+        this.treatments = threatments;
     }
 
-    public void setPastThreatments(List<Threatment> pastThreatments) {
-        this.pastThreatments = pastThreatments;
+    public void setPastThreatments(List<Treatment> pastThreatments) {
+        this.pastTreatments = pastThreatments;
     }
 }
