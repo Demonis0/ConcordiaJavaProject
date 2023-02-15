@@ -1,16 +1,12 @@
 package fr.demonis.javaproject;
 
-import java.text.DateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.LinkedList;
-import java.util.List;
+import fr.demonis.javaproject.ui.*;;
 
 public class Main {
 
 
     public static void main(String[] args) {
-        
+        MainMenu mainMenu = new MainMenu();
     }
 
 
