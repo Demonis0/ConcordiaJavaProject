@@ -21,6 +21,12 @@ public class DoctorMenu extends Frame implements ActionListener{
         b.setBounds(100,120,80,30);
         Button q=new Button("Quitter");
         q.setBounds(1000,150,80,30);
+        Button t=new Button("Treatements");
+        t.setBounds(100,250,80,30);
+        Button a=new Button("Appointements");
+        a.setBounds(100,350,80,30);
+        Button d=new Button("Doctors");
+        d.setBounds(100,450,80,30); 
 
 //register listener
         b.addActionListener(this);//passing current instance

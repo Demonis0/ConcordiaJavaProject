@@ -30,7 +30,7 @@ public class PatientMenu extends Frame implements ActionListener{
         });
         q.addActionListener (e -> {
             dispose();
-        }); 
+        });
 
 //add components and set size, layout and visibility
         add(b);add(tf);add(q);
