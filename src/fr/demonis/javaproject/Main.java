@@ -15,6 +15,7 @@ public class Main {
 
     public static void main(String[] args) {
         new MainMenu();
+        
         /*JSONObject jo = new JSONObject();
         jo.put("Last Name", "JACQUES");
         jo.put("First Name", "Matthieu");
