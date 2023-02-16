@@ -24,6 +24,7 @@ public class MainMenu extends Frame{
 
         //label setup
         Label l1 = new Label("Welcome to the hospital management system", Label.CENTER);
+
         l1.setBounds(0, Constants.ySize/2 - 75, Constants.xSize, 50);
         //make the label centered
 
@@ -83,8 +84,9 @@ public class MainMenu extends Frame{
         
         
 
-        //close the window
-        addWindowListener(new java.awt.event.WindowAdapter() {
+        //event : close the window and exit the program
+        frame.setDefaultCloseOperation ( JFrame.EXIT_ON_CLOSE );
+        frame.addWindowListener(new java.awt.event.WindowAdapter() {
             @Override
             public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                 System.exit(0);

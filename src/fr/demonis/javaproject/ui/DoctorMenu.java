@@ -4,27 +4,43 @@ import fr.demonis.javaproject.utils.Constants;
 
 import java.awt.*;
 import java.awt.event.*;
+import javax.swing.JFrame;
 
 public class DoctorMenu extends Frame implements ActionListener{
-
-    TextField tf;
     DoctorMenu(){
-
-//create components
-        tf=new TextField();
-        tf.setBounds(60,50,170,20);
+        //create components
+        Label l=new Label("Doctor Menu", Label.CENTER);
+        TextField tf=new TextField();
         Button b=new Button("Retour");
-        b.setBounds(100,120,80,30);
         Button q=new Button("Quitter");
-        q.setBounds(1000,150,80,30);
         Button t=new Button("Treatements");
-        t.setBounds(100,250,80,30);
         Button a=new Button("Appointements");
-        a.setBounds(100,350,80,30);
         Button d=new Button("Doctors");
-        d.setBounds(100,450,80,30);
 
-//register listener
+        //set bounds of components
+        l.setBounds(0, Constants.ySize/2 - 75, Constants.xSize, 50);
+        tf.setBounds(60,50,170,20);
+        b.setBounds(100,120,80,30);
+        q.setBounds(1000,150,80,30);
+        t.setBounds(100,200,80,30);
+        a.setBounds(100,250,80,30);
+        d.setBounds(100,300,80,30);
+
+        //frame setup
+        JFrame frame = new JFrame ();
+        frame.setBounds ( 0, 0, Constants.xSize, Constants.ySize);
+        frame.setVisible ( true );
+        frame.add(l);
+        frame.add(tf);
+        frame.add(b);
+        frame.add(q);
+        frame.add(t);
+        frame.add(a);
+        frame.add(d);
+        frame.setLayout(null);
+        frame.setVisible(true);
+
+    //register listener
         b.addActionListener(this);//passing current instance
 
         b.addActionListener (e -> {
@@ -35,13 +51,12 @@ public class DoctorMenu extends Frame implements ActionListener{
             dispose();
         });
 
-//add components and set size, layout and visibility
-        add(b);add(tf);add(q);
-        setSize(Constants.xSize,Constants.ySize);
-        setLayout(null);
-        setVisible(true);
+        //close the frame
+        frame.setDefaultCloseOperation ( JFrame.EXIT_ON_CLOSE );
     }
-    public void actionPerformed(ActionEvent e){
-        tf.setText("Welcome Doctor");
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        // TODO Auto-generated method stub
+        
     }
 }
