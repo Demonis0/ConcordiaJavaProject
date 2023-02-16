@@ -16,6 +16,9 @@ import java.util.List;
 
 public class Main {
 
+    public static List <Patient> storage1 = new ArrayList<Patient>();
+    public static List <Doctor> storage2 = new ArrayList<Doctor>();
+
     public static void main(String[] args) {
         //new MainMenu();
         JSONObject jo = new JSONObject();
@@ -75,6 +78,8 @@ public class Main {
             System.out.println(m.get(o));
         }
         System.out.println(jo3.getJSONArray("liste"));
+        
+        new MainMenu();
 
     }
 
