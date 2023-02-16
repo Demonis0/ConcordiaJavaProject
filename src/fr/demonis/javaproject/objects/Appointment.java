@@ -4,7 +4,6 @@ import fr.demonis.javaproject.entities.Doctor;
 import fr.demonis.javaproject.entities.Patient;
 
 public class Appointment {
-
     static int totalId = 0;
     int id;
     String date;
@@ -20,14 +19,6 @@ public class Appointment {
         this.price = price;
         this.id = totalId;
         totalId++;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public Patient getPatient() {
-        return patient;
     }
 
     public String getDate() {

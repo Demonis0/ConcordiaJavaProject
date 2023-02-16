@@ -1,15 +1,13 @@
 package fr.demonis.javaproject.ui;
-import fr.demonis.javaproject.entities.Patient;
-import fr.demonis.javaproject.Main;
+
 import fr.demonis.javaproject.utils.Constants;
 
 import java.awt.*;
 import java.awt.event.*;
-public class SecretaryMenu extends Frame implements ActionListener{
-
+public class AddDoctor extends Frame implements ActionListener{
     TextField tf;
 
-    SecretaryMenu(){
+    AddDoctor(){
 
 //create components
         tf=new TextField();
@@ -25,7 +23,7 @@ public class SecretaryMenu extends Frame implements ActionListener{
         Button a2=new Button("Add Doctor");
         a2.setBounds(100,620,80,30);
         Button j=new Button("Join Person");
-        j.setBounds(1000,220,80,30);
+        j.setBounds(100,720,80,30);
 
 //register listener
         b.addActionListener(this);//passing current instance
@@ -38,19 +36,12 @@ public class SecretaryMenu extends Frame implements ActionListener{
             dispose();
         });
         a1.addActionListener (e -> {
-            new AddPatient();
+            dispose();
         });
         a2.addActionListener (e -> {
-            new AddDoctor();
+            dispose();
         });
         j.addActionListener (e -> {
-            new Viewer();
-            Patient p0 = Main.storage1.get(0);
-            Viewer.fn.setText(p0.getFirstName());
-            Viewer.ln.setText(p0.getLastName());
-            Viewer.dob.setText(p0.getDateOfBirth());
-            Viewer.ic.setText(p0.getInsuranceCarrier());
-            Viewer.em.setText(p0.getExployer());
             dispose();
         });
 
