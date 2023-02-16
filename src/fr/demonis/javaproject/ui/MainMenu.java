@@ -14,6 +14,7 @@ public class MainMenu extends Frame{
         Button b1 = new Button("Doctor");
         Button b2 = new Button("Secretary");
         Button b3 = new Button("Patient");
+        Button exit = new Button("Exit");
         
         int button_width = 100;
         int button_height = 50;
@@ -21,11 +22,13 @@ public class MainMenu extends Frame{
         b1.setBounds((Constants.xSize/2)-120-(button_width/2),(Constants.ySize/2) - button_height/2, button_width, button_height);
         b2.setBounds((Constants.xSize/2)-(button_width/2),(Constants.ySize/2) -button_height/2, button_width, button_height);
         b3.setBounds((Constants.xSize/2)+120-(button_width/2),(Constants.ySize/2) -button_height/2, button_width, button_height);
+        exit.setBounds(Constants.xSize - 110,20,80,30);
 
         //label setup
         Label l1 = new Label("Welcome to the hospital management system", Label.CENTER);
 
         l1.setBounds(0, Constants.ySize/2 - 75, Constants.xSize, 50);
+        l1.setFont(Constants.PAGE_TITLE);
         //make the label centered
 
         //frame setup
@@ -35,6 +38,7 @@ public class MainMenu extends Frame{
         frame.add(b1);
         frame.add(b2);
         frame.add(b3);
+        frame.add(exit);
         frame.add(l1);
         frame.setLayout(null);
         frame.setVisible(true);
@@ -52,6 +56,10 @@ public class MainMenu extends Frame{
         b3.addActionListener(e -> {
             new PatientMenu();
             frame.dispose();
+        });
+        exit.addActionListener(e -> {
+            frame.dispose();
+            System.exit(0);
         });
         //keyboard press
         b1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -81,18 +89,19 @@ public class MainMenu extends Frame{
                 }
             }
         });
+        exit.addKeyListener(new java.awt.event.KeyAdapter() {
+            @Override
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
+                    frame.dispose();
+                    System.exit(0);
+                }
+            }
+        });
         
         
 
         //event : close the window and exit the program
         frame.setDefaultCloseOperation ( JFrame.EXIT_ON_CLOSE );
-        frame.addWindowListener(new java.awt.event.WindowAdapter() {
-            @Override
-            public void windowClosing(java.awt.event.WindowEvent windowEvent) {
-                System.exit(0);
-            }
-        });
-
-
     }
 }

@@ -1,6 +1,5 @@
 package fr.demonis.javaproject.entities;
 
-import fr.demonis.javaproject.Main;
 
 public abstract class Person {
 
