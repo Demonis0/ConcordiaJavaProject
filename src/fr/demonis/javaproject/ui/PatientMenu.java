@@ -1,13 +1,9 @@
 package fr.demonis.javaproject.ui;
 
-import fr.demonis.javaproject.Main;
 import fr.demonis.javaproject.utils.Constants;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.event.WindowListener;
-import javax.swing.*;
-import java.awt.Toolkit;
 
 public class PatientMenu extends Frame implements ActionListener{
     TextField tf;

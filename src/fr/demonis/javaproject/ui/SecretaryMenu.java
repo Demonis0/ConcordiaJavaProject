@@ -4,7 +4,6 @@ import fr.demonis.javaproject.utils.Constants;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.event.WindowListener;
 
 
 public class SecretaryMenu extends Frame implements ActionListener{

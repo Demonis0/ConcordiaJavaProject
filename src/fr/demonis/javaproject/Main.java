@@ -1,5 +1,4 @@
 package fr.demonis.javaproject;
-
 import fr.demonis.javaproject.ui.DoctorMenu;
 import fr.demonis.javaproject.ui.MainMenu;
 import org.json.JSONObject;
@@ -12,7 +11,6 @@ import java.util.List;
 
 
 public class Main {
-
     public static void main(String[] args) {
         new MainMenu();
         /*JSONObject jo = new JSONObject();
