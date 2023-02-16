@@ -64,7 +64,7 @@ public class Main {
         JSONObject jo3 = new JSONObject(lines.get(0));
         System.out.println(jo3.get("liste").toString());
         JSONArray ar = jo3.getJSONArray("liste");
-        //List<Integer> m = new ArrayList<Integer>();
+        List<Integer> tyum = new ArrayList<Integer>();
         HashMap<Specialities, Integer> m = new HashMap<Specialities, Integer>();
         for (int q = 0; q < ar.length(); q++) {
             String[] k = ar.getString(q).split(":");
