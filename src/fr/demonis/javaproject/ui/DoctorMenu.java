@@ -1,4 +1,3 @@
-
 package fr.demonis.javaproject.ui;
 
 import fr.demonis.javaproject.Main;
