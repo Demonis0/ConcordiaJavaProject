@@ -1,13 +1,12 @@
 package fr.demonis.javaproject.ui;
-
+import fr.demonis.javaproject.entities.Patient;
+import fr.demonis.javaproject.Main;
 import fr.demonis.javaproject.utils.Constants;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.event.WindowListener;
-
-
 public class SecretaryMenu extends Frame implements ActionListener{
+
     TextField tf;
 
     SecretaryMenu(){
@@ -21,6 +20,12 @@ public class SecretaryMenu extends Frame implements ActionListener{
         c.setBounds(100,250,80,30);
         Button q=new Button("Quitter");
         q.setBounds(1000,150,80,30);
+        Button a1=new Button("Add Patient");
+        a1.setBounds(100,520,80,30);
+        Button a2=new Button("Add Doctor");
+        a2.setBounds(100,620,80,30);
+        Button j=new Button("Join Person");
+        j.setBounds(1000,220,80,30);
 
 //register listener
         b.addActionListener(this);//passing current instance
@@ -32,10 +37,26 @@ public class SecretaryMenu extends Frame implements ActionListener{
         q.addActionListener (e -> {
             dispose();
         });
+        a1.addActionListener (e -> {
+            new AddPatient();
+        });
+        a2.addActionListener (e -> {
+            new AddDoctor();
+        });
+        j.addActionListener (e -> {
+            new Viewer();
+            Patient p0 = Main.storage1.get(0);
+            Viewer.fn.setText(p0.getFirstName());
+            Viewer.ln.setText(p0.getLastName());
+            Viewer.dob.setText(p0.getDateOfBirth());
+            Viewer.ic.setText(p0.getInsuranceCarrier());
+            Viewer.em.setText(p0.getExployer());
+            dispose();
+        });
 
 //add components and set size, layout and visibility
-        add(b);add(tf);add(c);add(q);
-        setSize(Constants.xSize,Constants.ySize);
+        add(b);add(tf);add(c);add(q);add(a1);add(a2);add(j);
+        setSize(Constants.xSize, Constants.ySize);
         setLayout(null);
         setVisible(true);
     }
@@ -43,4 +64,3 @@ public class SecretaryMenu extends Frame implements ActionListener{
         tf.setText("Secretary");
     }
 }
-

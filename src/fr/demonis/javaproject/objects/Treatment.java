@@ -2,10 +2,8 @@ package fr.demonis.javaproject.objects;
 
 import fr.demonis.javaproject.entities.Doctor;
 import fr.demonis.javaproject.entities.Patient;
-
 public class Treatment {
-
-     static int totalId = 0;
+    static int totalId = 0;
     int id;
     String date, dateBeg, dateEnd;
     double price;
@@ -53,17 +51,5 @@ public class Treatment {
 
     public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public Patient getPatient() {
-        return patient;
     }
 }
