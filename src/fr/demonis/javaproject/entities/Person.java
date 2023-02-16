@@ -1,6 +1,8 @@
 package fr.demonis.javaproject.entities;
 
-public class Person {
+import fr.demonis.javaproject.Main;
+
+public abstract class Person {
 
     String FirstName, LastName, dateOfBirth, phone, mail;
     int id;
@@ -62,5 +64,9 @@ public class Person {
 
     public void setMail(String mail) {
         this.mail = mail;
+    }
+
+    public int getId() {
+        return id;
     }
 }
