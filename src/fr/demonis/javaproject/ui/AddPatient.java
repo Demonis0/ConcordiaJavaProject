@@ -1,5 +1,4 @@
 package fr.demonis.javaproject.ui;
-
 import fr.demonis.javaproject.entities.Patient;
 import fr.demonis.javaproject.Main;
 import fr.demonis.javaproject.utils.Constants;
@@ -9,6 +8,8 @@ import java.awt.event.*;
 public class AddPatient extends Frame implements ActionListener{
     TextField fn;TextField ln;TextField dob;TextField ic;TextField em;
 
+
+    //this page allows us to register a new patient/ doctor.
     AddPatient(){
 
 //create components

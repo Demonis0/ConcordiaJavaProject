@@ -1,5 +1,4 @@
 package fr.demonis.javaproject.ui;
-
 import fr.demonis.javaproject.utils.Constants;
 
 import java.awt.*;
@@ -8,7 +7,7 @@ import javax.swing.JFrame;
 public class MainMenu extends Frame{
 
     public MainMenu(){
-        //add the main menu here
+        //add the main menu here: this will be the welcoming page redirecting the user.
 
         //buttons setup
         Button b1 = new Button("Doctor");
@@ -18,6 +17,7 @@ public class MainMenu extends Frame{
         int button_width = 100;
         int button_height = 50;
 
+        //allows us to center the buttons no matter the screen's size
         b1.setBounds((Constants.xSize/2)-120-(button_width/2),(Constants.ySize/2) - button_height/2, button_width, button_height);
         b2.setBounds((Constants.xSize/2)-(button_width/2),(Constants.ySize/2) -button_height/2, button_width, button_height);
         b3.setBounds((Constants.xSize/2)+120-(button_width/2),(Constants.ySize/2) -button_height/2, button_width, button_height);
@@ -28,7 +28,7 @@ public class MainMenu extends Frame{
         l1.setBounds(0, Constants.ySize/2 - 75, Constants.xSize, 50);
         //make the label centered
 
-        //frame setup
+        //frame setup (selecting which items will appear)
         JFrame frame = new JFrame ();
         frame.setBounds ( 0, 0, Constants.xSize, Constants.ySize);
         frame.setVisible ( true );
@@ -42,7 +42,9 @@ public class MainMenu extends Frame{
         //button events
         //mouse click
         b1.addActionListener(e -> {
+            //Opens a new page
             new DoctorMenu();
+            //closes the current page
             frame.dispose();
         });
         b2.addActionListener(e -> {
@@ -83,7 +85,6 @@ public class MainMenu extends Frame{
         });
 
 
-
         //event : close the window and exit the program
         frame.setDefaultCloseOperation ( JFrame.EXIT_ON_CLOSE );
         frame.addWindowListener(new java.awt.event.WindowAdapter() {
@@ -92,7 +93,5 @@ public class MainMenu extends Frame{
                 System.exit(0);
             }
         });
-
-
     }
 }
