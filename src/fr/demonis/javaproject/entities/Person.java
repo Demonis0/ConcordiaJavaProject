@@ -1,10 +1,6 @@
 package fr.demonis.javaproject.entities;
 
-import fr.demonis.javaproject.Main;
-
-import java.io.Serializable;
-
-public abstract class Person implements Serializable {
+public class Person {
 
     String FirstName, LastName, dateOfBirth, phone, mail;
     int id;
@@ -66,9 +62,5 @@ public abstract class Person implements Serializable {
 
     public void setMail(String mail) {
         this.mail = mail;
-    }
-
-    public int getId() {
-        return id;
     }
 }

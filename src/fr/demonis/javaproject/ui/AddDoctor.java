@@ -8,7 +8,7 @@ import fr.demonis.javaproject.utils.Specialities;
 import java.awt.*;
 import java.awt.event.*;
 public class AddDoctor extends Frame implements ActionListener{
-    TextField fn, ln, dob, doe, sp;
+    TextField fn, ln, dob, doe;
 
     /** To add doctors **/
     AddDoctor(){
@@ -34,13 +34,18 @@ public class AddDoctor extends Frame implements ActionListener{
         Label l4 = new Label("Date of employement:");
         l4.setBounds(100, 235, 200, 50);
 
-        sp=new TextField();
-        sp.setBounds(300,300,170,20);
-        Label l5 = new Label("            Speciality:");
-        l5.setBounds(100, 285, 200, 50);
-
         Button b=new Button("Send");
-        b.setBounds(100,350,80,30); 
+        b.setBounds(100,350,80,30);
+
+        Choice sp = new Choice();
+        // setting the bounds of choice menu
+        sp.setBounds(300, 300, 1000, 75);
+
+        // adding items to the choice menu
+        for (Specialities s : Specialities.values()) {
+            sp.addItem(s.toString());
+        }
+
 
 //register listener
         b.addActionListener(e -> {
@@ -48,9 +53,9 @@ public class AddDoctor extends Frame implements ActionListener{
             String lastN = ln.getText();
             String dateOfB = dob.getText();
             String dateOfE = doe.getText();
-            Specialities speciality = sp.getText();
-            Doctor d = new Doctor(firstN, lastN, dateOfB, dateOfE, speciality);
-            Main.storage1.add(d);
+            Specialities s = Specialities.valueOf(sp.getSelectedItem());
+            Doctor d = new Doctor(firstN, lastN, dateOfB, dateOfE, s);
+            Main.storage2.add(d);
 
             dispose();
         });//passing current instance
@@ -58,7 +63,7 @@ public class AddDoctor extends Frame implements ActionListener{
 
 
 //add components and set size, layout and visibility
-        add(b);add(fn);add(ln);add(dob);add(doe);add(sp);add(l1);add(l2);add(l3);add(l4);add(l5);
+        add(b);add(fn);add(ln);add(dob);add(doe);add(sp);add(l1);add(l2);add(l3);add(l4);
         setSize((Constants.xSize), (Constants.ySize));
         setLayout(null);
         setVisible(true);

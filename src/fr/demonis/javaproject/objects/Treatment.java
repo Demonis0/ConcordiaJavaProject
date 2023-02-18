@@ -2,19 +2,15 @@ package fr.demonis.javaproject.objects;
 
 import fr.demonis.javaproject.entities.Doctor;
 import fr.demonis.javaproject.entities.Patient;
-
-import java.io.Serializable;
-
-public class Treatment implements Serializable {
-
-     static int totalId = 0;
+public class Treatment {
+    static int totalId = 0;
     int id;
     String date, dateBeg, dateEnd;
     double price;
-    int doctor;
-    int patient;
+    Doctor doctor;
+    Patient patient;
 
-    public Treatment(String date, String dateBeg, String dateEnd, double price, int doctor, int patient) {
+    public Treatment(String date, String dateBeg, String dateEnd, double price, Doctor doctor, Patient patient) {
         this.date = date;
         this.dateBeg = dateBeg;
         this.dateEnd = dateEnd;
@@ -49,23 +45,11 @@ public class Treatment implements Serializable {
         this.price = price;
     }
 
-    public int getDoctor() {
+    public Doctor getDoctor() {
         return doctor;
     }
 
-    public void setDoctor(int doctor) {
+    public void setDoctor(Doctor doctor) {
         this.doctor = doctor;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public String getDate() {
-        return date;
-    }
-
-    public int getPatient() {
-        return patient;
     }
 }

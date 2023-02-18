@@ -41,6 +41,8 @@ public class Viewer extends Frame implements ActionListener{
 
         Button b=new Button("Leave");
         b.setBounds(100,450,80,30);
+        Button a=new Button("Add Info");
+        a.setBounds(100,450,80,30);
 
 
         //these buttons allow us to navigate in the patient/ doctor list
@@ -57,6 +59,7 @@ public class Viewer extends Frame implements ActionListener{
 
 //add components and set size, layout and visibility
         add(b);add(fn);add(ln);add(dob);add(ic);add(em);add(l1);add(l2);add(l3);add(l4);add(l5);
+        add(pr);add(ne);add(a);
         setSize((Constants.xSize), (Constants.ySize));
         setLayout(null);
         setVisible(true);
