@@ -1,12 +1,15 @@
 package fr.demonis.javaproject.ui;
 
+import fr.demonis.javaproject.Main;
 import fr.demonis.javaproject.utils.Constants;
 
 import java.awt.*;
 import java.awt.event.*;
+import java.awt.event.WindowListener;
+import javax.swing.*;
+import java.awt.Toolkit;
 
 public class PatientMenu extends Frame implements ActionListener{
-
     TextField tf;
     PatientMenu(){
 
@@ -17,12 +20,6 @@ public class PatientMenu extends Frame implements ActionListener{
         b.setBounds(100,120,80,30);
         Button q=new Button("Quitter");
         q.setBounds(1000,150,80,30);
-        Button t=new Button("Treatements");
-        t.setBounds(100,200,80,30);
-        Button a=new Button("Appointements");
-        a.setBounds(100,350,80,30);
-        Button d=new Button("Doctors");
-        d.setBounds(100,300,80,30);
 
 //register listener
         b.addActionListener(this);//passing current instance
@@ -36,7 +33,7 @@ public class PatientMenu extends Frame implements ActionListener{
         });
 
 //add components and set size, layout and visibility
-        add(b);add(tf);add(q);add(t);add(a);add(d);
+        add(b);add(tf);add(q);
         setSize(Constants.xSize,Constants.ySize);
         setLayout(null);
         setVisible(true);
@@ -45,3 +42,4 @@ public class PatientMenu extends Frame implements ActionListener{
         tf.setText("Welcome");
     }
 }
+
