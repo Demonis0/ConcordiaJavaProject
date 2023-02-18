@@ -1,5 +1,4 @@
 package fr.demonis.javaproject.ui;
-
 import fr.demonis.javaproject.utils.Constants;
 
 import java.awt.*;
@@ -7,7 +6,12 @@ import java.awt.event.*;
 public class Viewer extends Frame implements ActionListener{
     public static TextField fn, ln, dob, ic, em;
 
+    // this is the page on which information will be displayed for people
+    // it will always display the last patient by default
+    private int c = 0;
+    // var c will keep count to stop us from asking to see an object that is out of bound in the list
     Viewer(){
+
 
 //create components
         fn=new TextField();
@@ -36,7 +40,14 @@ public class Viewer extends Frame implements ActionListener{
         l5.setBounds(100, 285, 200, 50);
 
         Button b=new Button("Leave");
-        b.setBounds(100,350,80,30);
+        b.setBounds(100,450,80,30);
+
+
+        //these buttons allow us to navigate in the patient/ doctor list
+        Button pr=new Button("<");
+        b.setBounds(150,330,80,30);
+        Button ne=new Button(">");
+        b.setBounds(230,330,80,30);
 
         b.addActionListener(e -> {
             dispose();

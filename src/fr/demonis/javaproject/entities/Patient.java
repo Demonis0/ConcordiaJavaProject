@@ -1,5 +1,4 @@
 package fr.demonis.javaproject.entities;
-
 import fr.demonis.javaproject.objects.Appointment;
 import fr.demonis.javaproject.objects.Treatment;
 import fr.demonis.javaproject.utils.Specialities;

@@ -1,5 +1,4 @@
 package fr.demonis.javaproject.ui;
-
 import fr.demonis.javaproject.utils.Constants;
 
 import java.awt.*;
@@ -9,7 +8,13 @@ import javax.swing.JFrame;
 public class MainMenu extends Frame{
 
     public MainMenu(){
+
+        //add the main menu here: this will be the welcoming page redirecting the user.
+
+        //buttons setup
+
         //add the main menu here
+
         Button b1 = new Button("Doctor");
         Button b2 = new Button("Secretary");
         Button b3 = new Button("Patient");
@@ -21,6 +26,20 @@ public class MainMenu extends Frame{
         int button_width = 100;
         int button_height = 50;
 
+
+        //allows us to center the buttons no matter the screen's size
+        b1.setBounds((Constants.xSize/2)-120-(button_width/2),(Constants.ySize/2) - button_height/2, button_width, button_height);
+        b2.setBounds((Constants.xSize/2)-(button_width/2),(Constants.ySize/2) -button_height/2, button_width, button_height);
+        b3.setBounds((Constants.xSize/2)+120-(button_width/2),(Constants.ySize/2) -button_height/2, button_width, button_height);
+
+        //label setup
+        Label l1 = new Label("Welcome to the hospital management system", Label.CENTER);
+
+        l1.setBounds(0, Constants.ySize/2 - 75, Constants.xSize, 50);
+        //make the label centered
+
+        //frame setup (selecting which items will appear)
+
         b1.setBounds(w-120-(button_width/2), h-button_height/2, button_width, button_height);
         b2.setBounds(w-(button_width/2), h-button_height/2, button_width, button_height);
         b3.setBounds(w+120-(button_width/2), h-button_height/2, button_width, button_height);
@@ -31,7 +50,9 @@ public class MainMenu extends Frame{
 
         //button events : when mouse click button, it will open the corresponding menu
         b1.addActionListener(e -> {
+            //Opens a new page
             new DoctorMenu();
+            //closes the current page
             frame.dispose();
         });
         b2.addActionListener(e -> {
@@ -78,6 +99,9 @@ public class MainMenu extends Frame{
         frame.add(b3);
         frame.setLayout(null);
         frame.setVisible(true);
+        //event : close the window and exit the program
+        frame.setDefaultCloseOperation ( JFrame.EXIT_ON_CLOSE );
+        frame.addWindowListener(new java.awt.event.WindowAdapter() {
 
         //close the window
         addWindowListener(new java.awt.event.WindowAdapter() {
@@ -86,7 +110,5 @@ public class MainMenu extends Frame{
                 System.exit(0);
             }
         });
-
-
     }
 }
