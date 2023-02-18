@@ -29,4 +29,20 @@ public class Datas {
     public static void addTreatment(Treatment t) {
         treatments.put(t.getId(), t);
     }
+
+    public static HashMap<Integer, Patient> getPatients() {
+        return patients;
+    }
+
+    public static HashMap<Integer, Doctor> getDoctors() {
+        return doctors;
+    }
+
+    public static HashMap<Integer, Appointment> getAppointments() {
+        return appointments;
+    }
+
+    public static HashMap<Integer, Treatment> getTreatments() {
+        return treatments;
+    }
 }

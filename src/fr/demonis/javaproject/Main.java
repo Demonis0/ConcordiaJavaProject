@@ -4,12 +4,15 @@ import fr.demonis.javaproject.entities.Doctor;
 import fr.demonis.javaproject.entities.Patient;
 import fr.demonis.javaproject.objects.Appointment;
 import fr.demonis.javaproject.objects.Treatment;
+import fr.demonis.javaproject.ui.AddDoctor;
 import fr.demonis.javaproject.ui.DoctorMenu;
 import fr.demonis.javaproject.ui.MainMenu;
+import fr.demonis.javaproject.utils.Datas;
 import fr.demonis.javaproject.utils.Specialities;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.awt.*;
 import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
@@ -23,9 +26,28 @@ public class Main {
 
     public static void main(String[] args) {
         //new MainMenu();
-        Patient p = new Patient("Matthieu", "JACQUES", "14/02/2002", "Blue Cross", "SEPEFREI");
+        /*Patient p = new Patient("Matthieu", "JACQUES", "14/02/2002", "Blue Cross", "SEPEFREI");
         p.setPhone("efpzlfef");
         p.setMail("vkodskofpzef");
+        Patient p2 = new Patient("Boris", "JACQUES", "14/02/2002", "Blue Cross", "SEPEFREI");
+        p2.setPhone("efpzlfef");
+        p2.setMail("vkodskofpzef");
+        Patient p3 = new Patient("jean", "JACQUES", "14/02/2002", "Blue Cross", "SEPEFREI");
+        p3.setPhone("efpzlfef");
+        p3.setMail("vkodskofpzef");
+        Patient p4 = new Patient("Marie", "JACQUES", "14/02/2002", "Blue Cross", "SEPEFREI");
+        p4.setPhone("efpzlfef");
+        p4.setMail("vkodskofpzef");
+        HashMap<Integer, Patient> hm = new HashMap<Integer, Patient>();
+        hm.put(p.getId(), p);
+        hm.put(p2.getId(), p2);
+        hm.put(p3.getId(),p3);
+        hm.put(p4.getId(),p4);
+        List<Patient> patientList = hm.values().stream().toList();
+        for (Patient pat :
+                patientList) {
+            System.out.println(pat.getFirstName());
+        }*/
 
         /*JSONObject jo = new JSONObject();
         jo.put("Last Name", "JACQUES");
