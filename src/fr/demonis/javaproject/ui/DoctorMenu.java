@@ -1,46 +1,34 @@
 package fr.demonis.javaproject.ui;
 
+import fr.demonis.javaproject.Main;
 import fr.demonis.javaproject.utils.Constants;
 
 import java.awt.*;
 import java.awt.event.*;
-import javax.swing.JFrame;
+import java.awt.event.WindowListener;
+import javax.swing.*;
+import java.awt.Toolkit;
 
 public class DoctorMenu extends Frame implements ActionListener{
+
+    TextField tf;
     DoctorMenu(){
-        //create components
-        Label l=new Label("Doctor Menu", Label.CENTER);
-        TextField tf=new TextField();
-        Button b=new Button("Retour");
-        Button q=new Button("Quitter");
-        Button t=new Button("Treatements");
-        Button a=new Button("Appointements");
-        Button d=new Button("Doctors");
 
-        //set bounds of components
-        l.setBounds(0, Constants.ySize/2 - 75, Constants.xSize, 50);
+//create components
+        tf=new TextField();
         tf.setBounds(60,50,170,20);
+        Button b=new Button("Retour");
         b.setBounds(100,120,80,30);
+        Button q=new Button("Quitter");
         q.setBounds(1000,150,80,30);
-        t.setBounds(100,200,80,30);
-        a.setBounds(100,250,80,30);
-        d.setBounds(100,300,80,30);
+        Button t=new Button("Treatements");
+        t.setBounds(100,250,80,30);
+        Button a=new Button("Appointements");
+        a.setBounds(100,350,80,30);
+        Button d=new Button("Doctors");
+        d.setBounds(100,450,80,30);
 
-        //frame setup
-        JFrame frame = new JFrame ();
-        frame.setBounds ( 0, 0, Constants.xSize, Constants.ySize);
-        frame.setVisible ( true );
-        frame.add(l);
-        frame.add(tf);
-        frame.add(b);
-        frame.add(q);
-        frame.add(t);
-        frame.add(a);
-        frame.add(d);
-        frame.setLayout(null);
-        frame.setVisible(true);
-
-        //register listener
+//register listener
         b.addActionListener(this);//passing current instance
 
         b.addActionListener (e -> {
@@ -51,12 +39,13 @@ public class DoctorMenu extends Frame implements ActionListener{
             dispose();
         });
 
-        //close the frame
-        frame.setDefaultCloseOperation ( JFrame.EXIT_ON_CLOSE );
+//add components and set size, layout and visibility
+        add(b);add(tf);add(q);
+        setSize(Constants.xSize,Constants.ySize);
+        setLayout(null);
+        setVisible(true);
     }
-    @Override
-    public void actionPerformed(ActionEvent e) {
-        // TODO Auto-generated method stub
-
+    public void actionPerformed(ActionEvent e){
+        tf.setText("Welcome Doctor");
     }
 }
