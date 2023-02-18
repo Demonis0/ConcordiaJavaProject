@@ -1,13 +1,16 @@
 package fr.demonis.javaproject;
 
+import fr.demonis.javaproject.entities.Doctor;
+import fr.demonis.javaproject.entities.Patient;
+import fr.demonis.javaproject.objects.Appointment;
+import fr.demonis.javaproject.objects.Treatment;
 import fr.demonis.javaproject.ui.DoctorMenu;
 import fr.demonis.javaproject.ui.MainMenu;
 import fr.demonis.javaproject.utils.Specialities;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -16,12 +19,15 @@ import java.util.List;
 
 public class Main {
 
-    public static List <Patient> storage1 = new ArrayList<Patient>();
-    public static List <Doctor> storage2 = new ArrayList<Doctor>();
+
 
     public static void main(String[] args) {
         //new MainMenu();
-        JSONObject jo = new JSONObject();
+        Patient p = new Patient("Matthieu", "JACQUES", "14/02/2002", "Blue Cross", "SEPEFREI");
+        p.setPhone("efpzlfef");
+        p.setMail("vkodskofpzef");
+
+        /*JSONObject jo = new JSONObject();
         jo.put("Last Name", "JACQUES");
         jo.put("First Name", "Matthieu");
         jo.put("Date of birth", "14/02/2002");
@@ -77,11 +83,12 @@ public class Main {
                 m.keySet()) {
             System.out.println(m.get(o));
         }
-        System.out.println(jo3.getJSONArray("liste"));
-        
-        new MainMenu();
+        System.out.println(jo3.getJSONArray("liste"));*/
 
     }
+
+
+
 
 
 }
