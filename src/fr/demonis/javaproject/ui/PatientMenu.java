@@ -1,45 +1,58 @@
 package fr.demonis.javaproject.ui;
 
-import fr.demonis.javaproject.Main;
 import fr.demonis.javaproject.utils.Constants;
+import fr.demonis.javaproject.utils.FileConfiguration;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.event.WindowListener;
-import javax.swing.*;
-import java.awt.Toolkit;
 
 public class PatientMenu extends Frame implements ActionListener{
+
     TextField tf;
-    PatientMenu(){
+    PatientMenu(int id){
 
-//create components
-        tf=new TextField();
-        tf.setBounds(60,50,170,20);
-        Button b=new Button("Retour");
-        b.setBounds(100,120,80,30);
-        Button q=new Button("Quitter");
-        q.setBounds(1000,150,80,30);
+        setSize(Constants.xSize,Constants.ySize);
 
-//register listener
-        b.addActionListener(this);//passing current instance
-
-        b.addActionListener (e -> {
+        //create buttons
+        Button retour = new Button("Back");
+        retour.setBounds((int) Math.ceil(Constants.xSize*0.05),1*Constants.ySize/10,80,30);
+        retour.addActionListener(this);
+        retour.addActionListener (e -> {
             new MainMenu();
             dispose();
         });
-        q.addActionListener (e -> {
+        add(retour);
+
+
+        Button treatments = new Button("Treatements");
+        treatments.setBounds((int) Math.ceil(Constants.xSize*0.05),2*Constants.ySize/10,80,30);
+        add(treatments);
+
+
+        Button appointments = new Button("Appointements");
+        appointments.setBounds((int) Math.ceil(Constants.xSize*0.05),3*Constants.ySize/10,80,30);
+        add(appointments);
+
+
+        Button doctors = new Button("Doctors");
+        doctors.setBounds((int) Math.ceil(Constants.xSize*0.05),4*Constants.ySize/10,80,30);
+        add(doctors);
+
+
+        Button quitter = new Button("Quit");
+        quitter.setBounds((int) Math.ceil(Constants.xSize*0.80),5*Constants.ySize/10,80,30);
+        quitter.addActionListener (e -> {
+            FileConfiguration.save();
             dispose();
         });
+        add(quitter);
 
-//add components and set size, layout and visibility
-        add(b);add(tf);add(q);
-        setSize(Constants.xSize,Constants.ySize);
+
+
         setLayout(null);
         setVisible(true);
     }
-    public void actionPerformed(ActionEvent e){
-        tf.setText("Welcome");
-    }
-}
 
+    @Override
+    public void actionPerformed(ActionEvent e) {}
+}

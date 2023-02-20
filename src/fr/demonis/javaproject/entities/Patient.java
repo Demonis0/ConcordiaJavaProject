@@ -1,4 +1,5 @@
 package fr.demonis.javaproject.entities;
+
 import fr.demonis.javaproject.objects.Appointment;
 import fr.demonis.javaproject.objects.Treatment;
 import fr.demonis.javaproject.utils.Specialities;
@@ -17,8 +18,8 @@ public class Patient extends Person implements Serializable {
     List<Integer> treatments, pastTreatments;
     HashMap<Specialities, Integer> doctors;
 
-    public Patient(String firstName, String lastName, String dateOfBirth, String phone, String mail, String insuranceCarrier, String exployer) {
-        super(firstName, lastName, dateOfBirth, phone, mail);
+    public Patient(String firstName, String lastName, String dateOfBirth, String phone, String mail, String insuranceCarrier, String exployer, int id) {
+        super(firstName, lastName, dateOfBirth, phone, mail, id);
         this.insuranceCarrier = insuranceCarrier;
         this.employer = exployer;
         this.futureAppointments = new ArrayList<Integer>();
@@ -28,8 +29,8 @@ public class Patient extends Person implements Serializable {
         this.pastTreatments = new ArrayList<Integer>();
     }
 
-    public Patient(String firstName, String lastName, String dateOfBirth, String insuranceCarrier, String exployer) {
-        super(firstName, lastName, dateOfBirth);
+    public Patient(String firstName, String lastName, String dateOfBirth, String insuranceCarrier, String exployer, int id) {
+        super(firstName, lastName, dateOfBirth, id);
         this.insuranceCarrier = insuranceCarrier;
         this.employer = exployer;
         this.futureAppointments = new ArrayList<Integer>();

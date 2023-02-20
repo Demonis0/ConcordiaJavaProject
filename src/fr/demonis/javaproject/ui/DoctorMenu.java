@@ -1,51 +1,56 @@
 package fr.demonis.javaproject.ui;
 
-import fr.demonis.javaproject.Main;
 import fr.demonis.javaproject.utils.Constants;
+import fr.demonis.javaproject.utils.FileConfiguration;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.awt.event.WindowListener;
-import javax.swing.*;
-import java.awt.Toolkit;
+import javax.swing.JFrame;
 
 public class DoctorMenu extends Frame implements ActionListener{
+    DoctorMenu(int id){
 
-    TextField tf;
-    DoctorMenu(){
+        setBounds ( 0, 0, Constants.xSize, Constants.ySize);
 
-//create components
-        tf=new TextField();
-        tf.setBounds(60,50,170,20);
-        Button b=new Button("Retour");
-        b.setBounds(100,120,80,30);
-        Button q=new Button("Quitter");
-        q.setBounds(1000,150,80,30);
-        Button t=new Button("Treatements");
-        t.setBounds(100,250,80,30);
-        Button a=new Button("Appointements");
-        a.setBounds(100,350,80,30);
-        Button d=new Button("Doctors");
-        d.setBounds(100,450,80,30);
-
-//register listener
-        b.addActionListener(this);//passing current instance
-
-        b.addActionListener (e -> {
+        //create components
+        Button back = new Button("Back");
+        back.setBounds((int) Math.ceil(Constants.xSize*0.05),120,80,30);
+        add(back);
+        back.addActionListener (e -> {
             new MainMenu();
             dispose();
         });
-        q.addActionListener (e -> {
+
+
+        Button treatments = new Button("Treatements");
+        treatments.setBounds((int) Math.ceil(Constants.xSize*0.05),2*Constants.ySize/10,80,30);
+        add(treatments);
+
+
+        Button appointments = new Button("Appointements");
+        appointments.setBounds((int) Math.ceil(Constants.xSize*0.05),3*Constants.ySize/10,80,30);
+        add(appointments);
+
+
+        Button patients = new Button("Patients");
+        patients.setBounds((int) Math.ceil(Constants.xSize*0.05),4*Constants.ySize/10,80,30);
+        add(patients);
+
+
+        Button quit = new Button("Quitter");
+        quit.setBounds((int) Math.ceil(Constants.xSize*0.80),5*Constants.ySize/10,80,30);
+        add(quit);
+        quit.addActionListener (e -> {
+            FileConfiguration.save();
             dispose();
         });
 
-//add components and set size, layout and visibility
-        add(b);add(tf);add(q);
-        setSize(Constants.xSize,Constants.ySize);
+
+        //frame setup
         setLayout(null);
         setVisible(true);
     }
-    public void actionPerformed(ActionEvent e){
-        tf.setText("Welcome Doctor");
+    @Override
+    public void actionPerformed(ActionEvent e) {
     }
 }

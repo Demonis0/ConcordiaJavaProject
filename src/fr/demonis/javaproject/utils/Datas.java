@@ -9,10 +9,14 @@ import java.util.HashMap;
 
 public class Datas {
 
-    static HashMap<Integer, Patient> patients = new HashMap<Integer, Patient>();
-    static HashMap<Integer, Doctor> doctors = new HashMap<Integer, Doctor>();
-    static HashMap<Integer, Appointment> appointments = new HashMap<Integer, Appointment>();
-    static HashMap<Integer, Treatment> treatments = new HashMap<Integer, Treatment>();
+    static HashMap<Integer, Patient> patients;
+    static HashMap<Integer, Doctor> doctors;
+    static HashMap<Integer, Appointment> appointments;
+    static HashMap<Integer, Treatment> treatments;
+
+    public static int totalPersonId = 0;
+    public static int totalAppointmentsId = 0;
+    public static int totalTreatmentsId = 0;
 
     public static void addPatient(Patient p) {
         patients.put(p.getId(), p);
@@ -28,5 +32,21 @@ public class Datas {
 
     public static void addTreatment(Treatment t) {
         treatments.put(t.getId(), t);
+    }
+
+    public static HashMap<Integer, Patient> getPatients() {
+        return patients;
+    }
+
+    public static HashMap<Integer, Doctor> getDoctors() {
+        return doctors;
+    }
+
+    public static HashMap<Integer, Appointment> getAppointments() {
+        return appointments;
+    }
+
+    public static HashMap<Integer, Treatment> getTreatments() {
+        return treatments;
     }
 }

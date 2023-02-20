@@ -19,8 +19,8 @@ public class Doctor extends Person implements Serializable {
     List<Integer> futureAppointments,pastAppointments;
     List<Integer> treatments, pastTreatments;
 
-    public Doctor(String firstName, String lastName, String dateOfBirth, String phone, String mail, String dateOfEmployment, Specialities speciality) {
-        super(firstName, lastName, dateOfBirth, phone, mail);
+    public Doctor(String firstName, String lastName, String dateOfBirth, String phone, String mail, String dateOfEmployment, Specialities speciality, int id) {
+        super(firstName, lastName, dateOfBirth, phone, mail, id);
         this.dateOfEmployment = dateOfEmployment;
         this.speciality = speciality;
         this.patients = new ArrayList<Integer>();
@@ -31,8 +31,8 @@ public class Doctor extends Person implements Serializable {
         this.pastTreatments = new ArrayList<Integer>();
     }
 
-    public Doctor(String firstName, String lastName, String dateOfBirth, String dateOfEmployment, Specialities speciality) {
-        super(firstName, lastName, dateOfBirth);
+    public Doctor(String firstName, String lastName, String dateOfBirth, String dateOfEmployment, Specialities speciality, int id) {
+        super(firstName, lastName, dateOfBirth, id);
         this.dateOfEmployment = dateOfEmployment;
         this.speciality = speciality;
         this.patients = new ArrayList<Integer>();
@@ -107,6 +107,7 @@ public class Doctor extends Person implements Serializable {
         return pastTreatments;
     }
 
+    /*
     public JSONObject toJSONObject() {
         JSONObject jo = new JSONObject();
 
@@ -130,6 +131,7 @@ public class Doctor extends Person implements Serializable {
 
         return jo;
     }
+
 
     public static Doctor fromJSONObject(JSONObject jo) {
         Doctor doctor = new Doctor(jo.getString("firstName"), jo.getString("lastName"), jo.getString("dateOfBirth"), jo.getString("dateOfEmployment"), Specialities.valueOf(jo.getString("speciality")));
@@ -182,4 +184,6 @@ public class Doctor extends Person implements Serializable {
 
         return doctor;
     }
+    */
+
 }

@@ -7,22 +7,21 @@ import java.io.Serializable;
 
 public class Treatment implements Serializable {
 
-     static int totalId = 0;
     int id;
-    String date, dateBeg, dateEnd;
+    String date, dateBeg, dateEnd, medicines;
     double price;
     int doctor;
     int patient;
 
-    public Treatment(String date, String dateBeg, String dateEnd, double price, int doctor, int patient) {
+    public Treatment(String date, String dateBeg, String medicines, String dateEnd, double price, int doctor, int patient, int id) {
         this.date = date;
         this.dateBeg = dateBeg;
         this.dateEnd = dateEnd;
         this.price = price;
         this.doctor = doctor;
         this.patient = patient;
-        this.id = totalId;
-        totalId++;
+        this.medicines = medicines;
+        this.id = id;
     }
 
     public String getDateBeg() {
@@ -67,5 +66,25 @@ public class Treatment implements Serializable {
 
     public int getPatient() {
         return patient;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
+    }
+
+    public String getMedicines() {
+        return medicines;
+    }
+
+    public void setMedicines(String medicines) {
+        this.medicines = medicines;
+    }
+
+    public void setPatient(int patient) {
+        this.patient = patient;
     }
 }

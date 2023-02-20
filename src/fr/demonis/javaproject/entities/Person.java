@@ -8,24 +8,22 @@ public abstract class Person implements Serializable {
 
     String FirstName, LastName, dateOfBirth, phone, mail;
     int id;
-    static int totalId = 0;
 
-    public Person(String firstName, String lastName, String dateOfBirth, String phone, String mail) {
+
+    public Person(String firstName, String lastName, String dateOfBirth, String phone, String mail, int id) {
         FirstName = firstName;
         LastName = lastName;
         this.dateOfBirth = dateOfBirth;
         this.phone = phone;
         this.mail = mail;
-        this.id = totalId;
-        totalId++;
+        this.id = id;
     }
 
-    public Person(String firstName, String lastName, String dateOfBirth) {
+    public Person(String firstName, String lastName, String dateOfBirth, int id) {
         FirstName = firstName;
         LastName = lastName;
         this.dateOfBirth = dateOfBirth;
-        this.id = totalId;
-        totalId++;
+        this.id = id;
     }
 
     public String getFirstName() {
@@ -70,5 +68,9 @@ public abstract class Person implements Serializable {
 
     public int getId() {
         return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

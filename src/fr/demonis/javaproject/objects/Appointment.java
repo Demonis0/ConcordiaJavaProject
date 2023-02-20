@@ -6,22 +6,18 @@ import fr.demonis.javaproject.entities.Patient;
 import java.io.Serializable;
 
 public class Appointment implements Serializable {
-
-    static int totalId = 0;
     int id;
     String date;
     int patient;
     int doctor;
     double price;
 
-    public Appointment(int id, String date, int patient, int doctor, double price) {
-        this.id = id;
+    public Appointment(String date, int patient, int doctor, double price,int id) {
         this.date = date;
         this.patient = patient;
         this.doctor = doctor;
         this.price = price;
-        this.id = totalId;
-        totalId++;
+        this.id = id;
     }
 
     public int getId() {
@@ -54,5 +50,13 @@ public class Appointment implements Serializable {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setPatient(int patient) {
+        this.patient = patient;
     }
 }
