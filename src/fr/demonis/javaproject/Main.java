@@ -1,40 +1,18 @@
 package fr.demonis.javaproject;
 
-import fr.demonis.javaproject.entities.Doctor;
-import fr.demonis.javaproject.entities.Patient;
-import fr.demonis.javaproject.objects.Appointment;
-import fr.demonis.javaproject.objects.Treatment;
-import fr.demonis.javaproject.ui.AddDoctor;
-import fr.demonis.javaproject.ui.AskID;
-import fr.demonis.javaproject.ui.DoctorMenu;
-import fr.demonis.javaproject.ui.MainMenu;
-import fr.demonis.javaproject.utils.Datas;
+import fr.demonis.javaproject.ui.menus.MainMenu;
 import fr.demonis.javaproject.utils.FileConfiguration;
-import fr.demonis.javaproject.utils.Specialities;
-import org.json.JSONArray;
-import org.json.JSONObject;
-
-import java.awt.*;
-import java.io.*;
-import java.nio.file.Files;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
 
 
 public class Main {
 
 
     public static void main(String[] args) {
-        Datas.arg = "";
         FileConfiguration.load();
-        for (Patient p :
-                Datas.getPatients().values()) {
-            System.out.println(p.getFirstName());
-        }
+
 
         new MainMenu();
-        FileConfiguration.save();
+
         //new AskID();
         /*Patient p = new Patient("Matthieu", "JACQUES", "14/02/2002", "Blue Cross", "SEPEFREI");
         p.setPhone("efpzlfef");

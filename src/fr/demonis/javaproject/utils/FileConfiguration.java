@@ -17,7 +17,7 @@ public class FileConfiguration {
             String fileName = "datas\\patients.txt";
             FileOutputStream fos = new FileOutputStream(fileName);
             ObjectOutputStream oos = new ObjectOutputStream(fos);
-            oos.writeObject(Datas.patients.values().stream().toList());
+            oos.writeObject(Datas.getPatients().values().stream().toList());
 
             fileName = "datas\\doctors.txt";
             fos = new FileOutputStream(fileName);
@@ -33,6 +33,15 @@ public class FileConfiguration {
             fos = new FileOutputStream(fileName);
             oos = new ObjectOutputStream(fos);
             oos.writeObject(Datas.getAppointments().values().stream().toList());
+
+            fileName = "datas\\config.txt";
+            fos = new FileOutputStream(fileName);
+            oos = new ObjectOutputStream(fos);
+            List<Integer> config = new ArrayList<Integer>();
+            config.add(Datas.totalPersonId);
+            config.add(Datas.totalAppointmentsId);
+            config.add(Datas.totalTreatmentsId);
+            oos.writeObject(config);
 
             oos.close();
             fos.close();
@@ -51,50 +60,57 @@ public class FileConfiguration {
             File f2 = new File("datas\\doctors.txt");
             File f3 = new File("datas\\treatments.txt");
             File f4 = new File("datas\\appointments.txt");
-            if (!f1.exists() ||
-                    !f2.exists() ||
-                    !f3.exists() ||
-                    !f4.exists()) {
-                (new File("datas\\patients.txt")).createNewFile();
-                (new File("datas\\doctors.txt")).createNewFile();
-                (new File("datas\\treatments.txt")).createNewFile();
-                (new File("datas\\appointments.txt")).createNewFile();
-                load();
-            } else {
-                String fileName;
-                FileInputStream fin = null;
-                ObjectInputStream ois = null;
-                if (f1.length() != 0) {
-                    fileName = "datas\\patients.txt";
-                    fin = new FileInputStream(fileName);
-                    ois = new ObjectInputStream(fin);
-                    for (Patient p : (List<Patient>) ois.readObject()) Datas.addPatient(p);
-                }
-
-                if (f2.length() != 0) {
-                    fileName = "datas\\doctors.txt";
-                    fin = new FileInputStream(fileName);
-                    ois = new ObjectInputStream(fin);
-                    for (Doctor p : (List<Doctor>) ois.readObject()) Datas.addDoctor(p);
-                }
-
-                if (f3.length() != 0) {
-                    fileName = "datas\\treatments.txt";
-                    fin = new FileInputStream(fileName);
-                    ois = new ObjectInputStream(fin);
-                    for (Treatment p : (List<Treatment>) ois.readObject()) Datas.addTreatment(p);
-                }
-
-                if (f4.length() != 0) {
-                    fileName = "datas\\appointments.txt";
-                    fin = new FileInputStream(fileName);
-                    ois = new ObjectInputStream(fin);
-                    for (Appointment p : (List<Appointment>) ois.readObject()) Datas.addAppointment(p);
-                }
-
-                if (ois != null) ois.close();
-                if (fin != null) fin.close();
+            File f5 = new File("datas\\config.txt");
+            if (!f1.exists()) f1.createNewFile();
+            if (!f2.exists()) f2.createNewFile();
+            if (!f3.exists()) f3.createNewFile();
+            if (!f4.exists()) f4.createNewFile();
+            if (!f5.exists()) f5.createNewFile();
+            String fileName;
+            FileInputStream fin = null;
+            ObjectInputStream ois = null;
+            if (f1.length() != 0) {
+                fileName = "datas\\patients.txt";
+                fin = new FileInputStream(fileName);
+                ois = new ObjectInputStream(fin);
+                List<Patient> lp = (List<Patient>) ois.readObject();
+                for (Patient p : lp) Datas.addPatient(p);
             }
+
+            if (f2.length() != 0) {
+                fileName = "datas\\doctors.txt";
+                fin = new FileInputStream(fileName);
+                ois = new ObjectInputStream(fin);
+                for (Doctor p : (List<Doctor>) ois.readObject()) Datas.addDoctor(p);
+            }
+
+            if (f3.length() != 0) {
+                fileName = "datas\\treatments.txt";
+                fin = new FileInputStream(fileName);
+                ois = new ObjectInputStream(fin);
+                for (Treatment p : (List<Treatment>) ois.readObject()) Datas.addTreatment(p);
+            }
+
+            if (f4.length() != 0) {
+                fileName = "datas\\appointments.txt";
+                fin = new FileInputStream(fileName);
+                ois = new ObjectInputStream(fin);
+                for (Appointment p : (List<Appointment>) ois.readObject()) Datas.addAppointment(p);
+            }
+
+            if (f5.length() != 0) {
+                fileName = "datas\\config.txt";
+                fin = new FileInputStream(fileName);
+                ois = new ObjectInputStream(fin);
+                List<Integer> lc = (List<Integer>) ois.readObject();
+                Datas.totalPersonId = lc.get(0);
+                Datas.totalAppointmentsId = lc.get(1);
+                Datas.totalTreatmentsId = lc.get(2);
+            }
+
+            if (ois != null) ois.close();
+            if (fin != null) fin.close();
+
         } catch (IOException e) {
             throw new RuntimeException(e);
         } catch (ClassNotFoundException e) {

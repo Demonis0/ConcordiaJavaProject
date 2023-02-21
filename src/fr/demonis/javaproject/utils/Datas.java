@@ -14,7 +14,6 @@ public class Datas {
     static HashMap<Integer, Appointment> appointments;
     static HashMap<Integer, Treatment> treatments;
 
-    public static String arg;
     public static int totalPersonId = 0;
     public static int totalAppointmentsId = 0;
     public static int totalTreatmentsId = 0;
@@ -49,5 +48,21 @@ public class Datas {
 
     public static HashMap<Integer, Treatment> getTreatments() {
         return treatments;
+    }
+
+    public static void removeAppointment(int id) {
+        appointments.remove(id);
+    }
+
+    public static void removeTreatment(int id) {
+        treatments.remove(id);
+    }
+
+    public static void removePatient(int id) {
+        patients.remove(id);
+    }
+
+    public static void removeDoctor(int id) {
+        doctors.remove(id);
     }
 }

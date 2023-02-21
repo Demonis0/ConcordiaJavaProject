@@ -3,8 +3,6 @@ package fr.demonis.javaproject.entities;
 import fr.demonis.javaproject.objects.Appointment;
 import fr.demonis.javaproject.objects.Treatment;
 import fr.demonis.javaproject.utils.Specialities;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -14,8 +12,8 @@ import java.util.List;
 public class Patient extends Person implements Serializable {
 
     String insuranceCarrier,employer;
-    List<Integer> futureAppointments,pastAppointments;
-    List<Integer> treatments, pastTreatments;
+    List<Integer> futureAppointments;
+    List<Integer> treatments;
     HashMap<Specialities, Integer> doctors;
 
     public Patient(String firstName, String lastName, String dateOfBirth, String phone, String mail, String insuranceCarrier, String exployer, int id) {
@@ -23,10 +21,8 @@ public class Patient extends Person implements Serializable {
         this.insuranceCarrier = insuranceCarrier;
         this.employer = exployer;
         this.futureAppointments = new ArrayList<Integer>();
-        this.pastAppointments = new ArrayList<Integer>();
         this.doctors = new HashMap<Specialities, Integer>();
         this.treatments = new ArrayList<Integer>();
-        this.pastTreatments = new ArrayList<Integer>();
     }
 
     public Patient(String firstName, String lastName, String dateOfBirth, String insuranceCarrier, String exployer, int id) {
@@ -34,10 +30,8 @@ public class Patient extends Person implements Serializable {
         this.insuranceCarrier = insuranceCarrier;
         this.employer = exployer;
         this.futureAppointments = new ArrayList<Integer>();
-        this.pastAppointments = new ArrayList<Integer>();
         this.doctors = new HashMap<Specialities, Integer>();
         this.treatments = new ArrayList<Integer>();
-        this.pastTreatments = new ArrayList<Integer>();
     }
 
     public String getInsuranceCarrier() {
@@ -64,16 +58,21 @@ public class Patient extends Person implements Serializable {
         this.futureAppointments = futureAppointments;
     }
 
-    public void setPastAppointments(List<Integer> pastAppointments) {
-        this.pastAppointments = pastAppointments;
-    }
-
     public void setTreatments(List<Integer> treatments) {
         this.treatments = treatments;
     }
 
-    public void setPastThreatments(List<Integer> pastTreatments) {
-        this.pastTreatments = pastTreatments;
+    public List<Integer> getFutureAppointments() {
+        return futureAppointments;
+    }
+
+
+    public List<Integer> getTreatments() {
+        return treatments;
+    }
+
+    public HashMap<Specialities, Integer> getDoctors() {
+        return doctors;
     }
 
     /*public JSONObject toJSONObject() {

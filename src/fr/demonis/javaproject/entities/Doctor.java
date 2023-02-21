@@ -3,8 +3,6 @@ package fr.demonis.javaproject.entities;
 import fr.demonis.javaproject.objects.Appointment;
 import fr.demonis.javaproject.objects.Treatment;
 import fr.demonis.javaproject.utils.Specialities;
-import org.json.JSONArray;
-import org.json.JSONObject;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -15,20 +13,17 @@ public class Doctor extends Person implements Serializable {
 
     String dateOfEmployment;
     Specialities speciality;
-    List<Integer> patients,pastPatients;
-    List<Integer> futureAppointments,pastAppointments;
-    List<Integer> treatments, pastTreatments;
+    List<Integer> patients;
+    List<Integer> futureAppointments;
+    List<Integer> treatments;
 
     public Doctor(String firstName, String lastName, String dateOfBirth, String phone, String mail, String dateOfEmployment, Specialities speciality, int id) {
         super(firstName, lastName, dateOfBirth, phone, mail, id);
         this.dateOfEmployment = dateOfEmployment;
         this.speciality = speciality;
         this.patients = new ArrayList<Integer>();
-        this.pastPatients = new ArrayList<Integer>();
         this.futureAppointments = new ArrayList<Integer>();
-        this.pastAppointments = new ArrayList<Integer>();
         this.treatments = new ArrayList<Integer>();
-        this.pastTreatments = new ArrayList<Integer>();
     }
 
     public Doctor(String firstName, String lastName, String dateOfBirth, String dateOfEmployment, Specialities speciality, int id) {
@@ -36,11 +31,8 @@ public class Doctor extends Person implements Serializable {
         this.dateOfEmployment = dateOfEmployment;
         this.speciality = speciality;
         this.patients = new ArrayList<Integer>();
-        this.pastPatients = new ArrayList<Integer>();
         this.futureAppointments = new ArrayList<Integer>();
-        this.pastAppointments = new ArrayList<Integer>();
         this.treatments = new ArrayList<Integer>();
-        this.pastTreatments = new ArrayList<Integer>();
     }
 
     public String getDateOfEmployment() {
@@ -63,49 +55,31 @@ public class Doctor extends Person implements Serializable {
         this.patients = patients;
     }
 
-    public void setPastPatients(List<Integer> pastPatients) {
-        this.pastPatients = pastPatients;
-    }
 
     public void setFutureAppointments(List<Integer> futureAppointments) {
         this.futureAppointments = futureAppointments;
     }
 
-    public void setPastAppointments(List<Integer> pastAppointments) {
-        this.pastAppointments = pastAppointments;
-    }
 
     public void setTreatments(List<Integer> treatments) {
         this.treatments = treatments;
     }
 
-    public void setPastTreatments(List<Integer> pastTreatments) {
-        this.pastTreatments = pastTreatments;
-    }
 
     public List<Integer> getPatients() {
         return patients;
     }
 
-    public List<Integer> getPastPatients() {
-        return pastPatients;
-    }
 
     public List<Integer> getFutureAppointments() {
         return futureAppointments;
     }
 
-    public List<Integer> getPastAppointments() {
-        return pastAppointments;
-    }
 
     public List<Integer> getTreatments() {
         return treatments;
     }
 
-    public List<Integer> getPastTreatments() {
-        return pastTreatments;
-    }
 
     /*
     public JSONObject toJSONObject() {
