@@ -109,7 +109,7 @@ public class AddPatient extends Frame {
 
                 dispose();
             } else {
-                l9.setText("You must fill all the required fileds.");
+                l9.setText("You must fill all the required fields.");
             }
         });
 

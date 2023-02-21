@@ -7,6 +7,7 @@ import fr.demonis.javaproject.objects.Treatment;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 
@@ -88,14 +89,14 @@ public class FileConfiguration {
                 fileName = "datas\\treatments.txt";
                 fin = new FileInputStream(fileName);
                 ois = new ObjectInputStream(fin);
-                for (Treatment p : (List<Treatment>) ois.readObject()) Datas.addTreatment(p);
+                for (Treatment p : (List<Treatment>) ois.readObject()) if ((new Date(Integer.parseInt(p.getDateEnd().split("/")[2]), Integer.parseInt(p.getDateEnd().split("/")[1]),Integer.parseInt(p.getDateEnd().split("/")[0]))).after(new Date(System.currentTimeMillis()))) Datas.addTreatment(p);
             }
 
             if (f4.length() != 0) {
                 fileName = "datas\\appointments.txt";
                 fin = new FileInputStream(fileName);
                 ois = new ObjectInputStream(fin);
-                for (Appointment p : (List<Appointment>) ois.readObject()) Datas.addAppointment(p);
+                for (Appointment p : (List<Appointment>) ois.readObject()) if ((new Date(Integer.parseInt(p.getDate().split("/")[2]), Integer.parseInt(p.getDate().split("/")[1]),Integer.parseInt(p.getDate().split("/")[0]))).after(new Date(System.currentTimeMillis()))) Datas.addAppointment(p);
             }
 
             if (f5.length() != 0) {

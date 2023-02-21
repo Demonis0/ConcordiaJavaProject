@@ -26,25 +26,6 @@ public class MainMenu extends Frame{
 
 
         //buttons setup (Object and events handling)
-       /* Button b1 = new Button("Doctor");
-        b1.setBounds((Constants.xSize/2)-120-(button_width/2),(Constants.ySize/2) - button_height/2, button_width, button_height);
-        frame.add(b1);
-        b1.addActionListener(e -> {
-            //Opens a new page
-            new AskID(false);
-            //closes the current page
-            frame.dispose();
-        });
-        b1.addKeyListener(new java.awt.event.KeyAdapter() {
-            @Override
-            public void keyPressed(java.awt.event.KeyEvent evt) {
-                if (evt.getKeyCode() == java.awt.event.KeyEvent.VK_ENTER) {
-                    new AskID(false);
-                    frame.dispose();
-                }
-            }
-        });*/
-
 
         Button b2 = new Button("Log in");
         b2.setBounds((Constants.xSize/2)-(button_width/2),(Constants.ySize/2) -button_height/2, button_width, button_height);
